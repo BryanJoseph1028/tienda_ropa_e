@@ -10,16 +10,16 @@
 </head>
 
 <body>
-    <form method="post">
+    <form action="/dashboard/" method="post">
         <header>
             <h1>Login</h1>
             <nav>
                 <ul>
-                <li><a href="{% url 'home' % }"> Inicio</a></li>
-                <li><a href="{% url 'catalogo' %}">Catálogo</a></li>
-                <li><a href="{% url 'ofertas' %}">Ofertas</a></li>
-                <li><a href="{% url 'contacto' %}">Contacto</a></li>
-                <li><a href=" {% url 'login' %} ">Login</a></li>
+                    <li><a href="{% url 'home' % }"> Inicio</a></li>
+                    <li><a href="{% url 'catalogo' %}">Catálogo</a></li>
+                    <li><a href="{% url 'ofertas' %}">Ofertas</a></li>
+                    <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                    <li><a href=" {% url 'login' %} ">Login</a></li>
                 </ul>
             </nav>
         </header>
@@ -47,21 +47,20 @@
 
             <!-- enlaces del negocio -->
             
-            <div class="helpLinks"> 
-                <br>
-                <a href="{% url 'RegistrosUsuarios' % }">Soy nuevo cliente</a>
-                <a href="{% url 'RecuperacioContrasena' % }">Olvidé mi Contraseña</a>
+            <div class="helpLinks">
+                <a href="recuperarUsuario.html">Soy nuevo cliente</a>
+                <a href="recuperarPassword.html">Olvidé mi Contraseña</a>
             </div>
         </section>
 
         <footer>
             <div class="redes-sociales">
-                <a href="#"><img src="/staticfiles/icons/instagram.png" alt="Instagram"></a>
-                <a href="#"><img src="/staticfiles/icons/whatsapp.png" alt="WhatsApp"></a>
-                <a href="https://www.facebook.com/people/MTA-El-Portal-De-La-Moda/100090363232444/?mibextid=ZbWKwL"><img src="/staticfiles/icons/facebook.png" alt="Facebook"></a>
-                <a href="#"><img src="/staticfiles/icons/ubicacion.png" alt="Ubicación"></a>
-                <a href="#"><img src="/staticfiles/icons/horario.png" alt="Horario"></a>
-                <a href="#"><img src="/staticfiles/icons/telefono.png" alt="Teléfono"></a>
+                <a href="#"><img src="../staticfiles/images/login/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="../staticfiles/images/login/whatsapp.png" alt="WhatsApp"></a>
+                <a href="https://www.facebook.com/people/MTA-El-Portal-De-La-Moda/100090363232444/?mibextid=ZbWKwL"><img src="../img/iconos/icon/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="../staticfiles/images/login/ubicacion.png" alt="Ubicación"></a>
+                <a href="#"><img src="../staticfiles/images/login/horario.png" alt="Horario"></a>
+                <a href="#"><img src="../staticfiles/images/login/telefono.png" alt="Teléfono"></a>
             </div>
             <p>&copy; Eleven Store. Todos los derechos reservados.</p>
         </footer>

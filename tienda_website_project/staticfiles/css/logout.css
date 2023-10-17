@@ -1,9 +1,10 @@
-/* Estilo global */
+/* Estilos generales */
 body {
-    background-color: #f7f7f7;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
 }
 
 /* Encabezado */
@@ -45,62 +46,206 @@ nav a:hover {
     color: #ffd700; /* Cambia el color al pasar el mouse */
 }
 
-/* Contenedor principal del formulario */
-.formatoLogin {
-    background-color: #fff;
-    max-width: 400px;
-    margin: 20px auto;
+/* Secciones */
+section {
+    margin: 20px;
     padding: 20px;
+    background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Título del formulario */
-.titulo h2 {
+section h2 {
     font-size: 20px;
+    margin: 0;
+}
+
+/* Estilos para la sección de productos destacados */
+.destacados {
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+}
+
+.destacados h2 {
+    font-size: 24px;
     color: #333;
-    margin: 0 0 20px;
+    margin-bottom: 20px;
 }
 
-/* Imagen de usuario */
-.fotoUsuario img {
-    max-width: 100px;
-    display: block;
-    margin: 0 auto 20px;
+/* Estilos para cada producto */
+.destacados div {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    display: inline-block;
+    width: 300px;
+    text-align: center;
 }
 
-/* Campos de entrada */
-.datoUsuario input,
-.datoPassword input {
+.imgProducto {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.informacion {
+    padding: 15px;
+}
+
+.informacion p {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.precio {
+    font-weight: bold;
+    color: #e74c3c;
+    margin-top: 10px;
+}
+
+button {
+    background-color: #1b5583;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #ffd700;
+}
+
+/* Estilo para la clase Catalogo */
+
+/* Estilos para la sección de catálogo */
+.catalogo {
+    background-color: #f7f7f7;
+    padding: 20px;
+    text-align: center;
+}
+
+.catalogo h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Estilos para la sección de catálogo */
+.catalogo {
+    background-color: #f7f7f7;
+    padding: 20px;
+    text-align: center;
+}
+
+.catalogo h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Estilos para cada producto en el catálogo */
+.catalogo div {
+    margin: 20px;
+    background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
+    padding: 10px;
+    display: inline-block;
+    vertical-align: top;
+    width: 200px; /* Ancho de cada producto */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Botón de inicio de sesión */
-.btValidacion button {
+.catalogo .imgProducto {
+    max-width: 100%;
+    height: auto;
+}
+
+.catalogo .informacion {
+    text-align: left;
+}
+
+.catalogo p {
+    margin: 5px 0;
+}
+
+.catalogo .precio {
+    font-weight: bold;
+    color: #1b5583;
+}
+
+.catalogo button {
     background-color: #1b5583;
     color: #fff;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 5px 10px;
     cursor: pointer;
-    transition: background-color 0.2s;
 }
 
-.btValidacion button:hover {
-    background-color: #000;
+.catalogo button:hover {
+    background-color: #ffd700;
 }
 
-/* Enlaces de ayuda */
-.helpLinks a {
-    text-decoration: none;
+/* Estilos para la clase Ofertas*/
+/* Estilos para la sección de ofertas */
+.ofertas {
+    background-color: #f7f7f7;
+    padding: 20px;
+    text-align: center;
+}
+
+.ofertas h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Estilos para cada producto en ofertas */
+.ofertas div {
+    margin: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    display: inline-block;
+    vertical-align: top;
+    width: 200px; /* Ancho de cada producto */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.ofertas .imgProducto {
+    max-width: 100%;
+    height: auto;
+}
+
+.ofertas .informacion {
+    text-align: left;
+}
+
+.ofertas p {
+    margin: 5px 0;
+}
+
+.ofertas .precio {
+    font-weight: bold;
     color: #1b5583;
-    display: block;
-    margin-bottom: 10px;
-    font-size: 14px;
+}
+
+.ofertas button {
+    background-color: #1b5583;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.ofertas button:hover {
+    background-color: #ffd700;
 }
 
 /* Pie de página */
@@ -122,7 +267,5 @@ footer {
     max-width: 30px;
     vertical-align: middle;
 }
-
-/* Añade más estilos según sea necesario */
 
 

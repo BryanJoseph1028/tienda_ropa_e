@@ -18,44 +18,40 @@ from django.contrib import admin
 from django.urls import path, include
 from homepage import views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     
-    path("", include('homepage.urls')),
-    
-    path('acccounts/', include('django.contrib.auth.urls')),
-    
-    path('login/', views.login, name='login'),#son las rutas
-    
-    path('RegistrosUsuarios/', views.RegistrosUsuarios, name='RegistrosUsuarios'),
-    
-    path('Carrito/', views.CarritoCompras, name='Carrito'),
+    path('', views.home, name='home'),
     
     path('catalogo/', views.catalogo, name='catalogo'),
     
-    path('productoDetalle/', views.ProductoDetalle, name='productoDetalle'),
+    path('Carrito/', views.CarritoCompras, name='Carrito'),
     
-    path('Dashboard/', views.Dashboard, name='Dashboard'),    
+    path('contacto/', views.contacto, name='contacto'),
+    
+    path('Dashboard/', views.Dashboard, name='Dashboard'),  
     
     path('GenerarPedido/', views.GenerarPedido, name='GenerarPedido'),
+    
+    path('login/', views.login, name='login'),#son las rutas
+    
+    path('logout/', views.logout, name='logout'),
+    
+    path('ofertas/', views.ofertas, name='ofertas'),
     
     path('PedidoRealizado/', views.PedidoRealizado, name='PedidoRealizado'),
     
     path('Proveedores/', views.Proveedores, name='proveedores'),
     
+    path('productoDetalle/', views.ProductoDetalle, name='productoDetalle'),
+    
+    path('RegistrosUsuarios/', views.RegistrosUsuarios, name='RegistrosUsuarios'),
+    
     path('RecuperacionContrasena/', views.RecuperacionContrasena, name='RecuperacionContrasena'),
     
     path('Roles/', views.Roles, name='Roles'),
-
-    path('contacto/', views.contacto, name='contacto'),
-    
-    path('ofertas/', views.ofertas, name='ofertas'),
     
     path('VentasRealizadas/', views.VentasRealizadas, name='VentasRealizadas'),
-    
-    path ('logout/', views.logout, name='logout'),
-    
-    
-    
     
 ]

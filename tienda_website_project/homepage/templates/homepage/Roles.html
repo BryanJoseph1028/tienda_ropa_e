@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Usuarios</title>
+    <link href="{% static 'css/roles.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <header>
+        <h1>Gestión de Usuarios</h1>
+        <nav>
+            <ul>
+                <li><a href="../html/index.html">Inicio</a></li>
+                <li><a href="../html/productos.html">Catálogo</a></li>
+                <li><a href="../html/ofertas.html">Ofertas</a></li>
+                <li><a href="../html/contacto.html">Contacto</a></li>
+                <li><a href="../html/login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Botón para agregar un nuevo usuario -->
+   <!-- <button id="agregar-usuario">Agregar Usuario</button>-->
+
+    <!-- Tabla de usuarios -->
+    <table>
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Contraseña</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="tabla-usuarios">
+            <!-- Aquí se generará la lista de usuarios desde JavaScript -->
+        </tbody>
+    </table>
+
+    <!-- Modal para editar usuario -->
+    <div id="modal-editar" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Editar Usuario</h2>
+            <form id="editar-form">
+                <label for="edit-usuario">Usuario:</label>
+                <input type="text" id="edit-usuario" name="edit-usuario" required>
+
+                <label for="edit-contrasena">Contraseña:</label>
+                <input type="password" id="edit-contrasena" name="edit-contrasena" required>
+
+                <button type="submit">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="redes-sociales">
+            <a href="#"><img src="../img/iconos/icon/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="../img/iconos/icon/whatsapp.png" alt="WhatsApp"></a>
+            <a href="https://www.facebook.com/people/MTA-El-Portal-De-La-Moda/100090363232444/?mibextid=ZbWKwL"><img src="../img/iconos/icon/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="../img/iconos/icon/ubicacion.png" alt="Ubicación"></a>
+            <a href="#"><img src="../img/iconos/icon/horario.png" alt="Horario"></a>
+            <a href="#"><img src="../img/iconos/icon/telefono.png" alt="Teléfono"></a>
+        </div>
+        <p>&copy; El portal de la moda. Todos los derechos reservados.</p>
+    </footer>
+    <script src="/Fron end/Javascript/usuarios.js"></script>
+</body>
+</html>

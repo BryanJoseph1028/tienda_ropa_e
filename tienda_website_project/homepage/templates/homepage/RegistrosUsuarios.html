@@ -23,12 +23,13 @@
 
     <section class="registro-form">
         <h2>Completa el formulario de registro</h2>
-        <form action="procesar_registro.php" method="POST">
+        <form action="/Dashboard/" method="POST"> {% csrf_token %}
+            
             <label for="nombre">Nombre completo:</label>
-            <input type="text" id="nombre" name="nombre" required>
+            <input type="text" id="txt_nombre" name="txt_nombre" required>
 
-            <label for="usuario">Usuario:</label>
-            <input type="text" id="usuario" name="usuario" required>
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="txt_apellidos" name="txt_apellidos" required>
 
             <label for="email">Correo electrónico:</label>
             <input type="email" id="email" name="email" required>
