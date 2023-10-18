@@ -1,4 +1,5 @@
 import unittest
+from locust import HttpUser, task, between
 from selenium import webdriver
 import time
 
