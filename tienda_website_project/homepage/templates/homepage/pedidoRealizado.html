@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen del Pedido</title>
+    <link rel="stylesheet"type="text/css" href="{% static 'css/pedidoRealizado.css' %}">
+</head>
+<body>
+    < <header>
+        <h1>Tienda de Ropa en Línea</h1>
+        <nav>
+            <ul>
+                <li><a href="../html/index.html">Inicio</a></li>
+                <li><a href="../html/productos.html">Catálogo</a></li>
+                <li><a href="../html/ofertas.html">Ofertas</a></li>
+                <li><a href="../html/contacto.html">Contacto</a></li>
+                <li><a href="../html/login.html">Login</a></li>
+                <li><a href="../html/ventas.html">Ventas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Resumen del Pedido</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Descripción del Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio Unitario</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Camiseta Roja</td>
+                    <td>2</td>
+                    <td>Q65.99</td>
+                    <td>Q131.98</td>
+                </tr>
+                <tr>
+                    <td>Pantalones Azules</td>
+                    <td>1</td>
+                    <td>Q120.99</td>
+                    <td>Q241.98</td>
+                </tr>
+                <tr>
+                    <td>Zapatos Negros</td>
+                    <td>1</td>
+                    <td>Q250.00</td>
+                    <td>Q250.00</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="total">
+            <p>Total a Pagar: Q623.96</p>
+        </div>
+    </main>
+    <footer>
+        <div class="redes-sociales">
+            <a href="#"><img src="../img/iconos/icon/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="../img/iconos/icon/whatsapp.png" alt="WhatsApp"></a>
+            <a href="https://www.facebook.com/people/MTA-El-Portal-De-La-Moda/100090363232444/?mibextid=ZbWKwL"><img src="../img/iconos/icon/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="../img/iconos/icon/ubicacion.png" alt="Ubicación"></a>
+            <a href="#"><img src="../img/iconos/icon/horario.png" alt="Horario"></a>
+            <a href="#"><img src="../img/iconos/icon/telefono.png" alt="Teléfono"></a>
+        </div>
+        <p>&copy; El portal de la moda. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

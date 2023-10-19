@@ -1,12 +1,20 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from .models import registros_usuarios
+from .models import roles
+from .models import Carrito, Venta
 
 # Create your views here.
 def home(request): #aqui empiezan las rutas como el index
     return render(request, 'homepage\home.html') 
 
-def CarritoCompras(request): 
+def CarritoCompras(request, product_id): 
+    product = Product.objects.get(pk=product_id)
+    cart, created = Cart.objects.get_or_create()
+    cart_item, created = CartItem.objects.get_or_create(product=product, cart=cart, defaults={'quantity': 1})
+    if not created:
+        cart_item.quantity += 1
+        cart_item.save()
     return render(request, 'homepage\carritoCompras.html')    
 
 def catalogo(request): 
@@ -28,6 +36,13 @@ def GenerarPedido(request):
     return render(request, 'homepage\generarPedido.html')   
 
 def login(request): 
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            messages.success(request, 'Inicio de sesión exitoso.')
     return render(request, 'homepage\login.html')
 
 def logout(request):
@@ -45,6 +60,12 @@ def Proveedores(request):
 
 @login_required
 def PedidoRealizado(request): 
+    if request.method == 'POST':
+        carrito = Carrito.objects.get(usuario=request.user)
+        venta = Venta(carrito=carrito)
+        venta.save()
+        carrito.productos.clear()
+        return redirect('homepage\pedidoRealizado.html')
     return render(request, 'homepage\pedidoRealizado.html')
 
 def RecuperacionContrasena(request): 

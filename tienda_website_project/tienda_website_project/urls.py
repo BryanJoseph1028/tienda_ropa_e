@@ -54,4 +54,5 @@ urlpatterns = [
     
     path('VentasRealizadas/', views.VentasRealizadas, name='VentasRealizadas'),
     
+    
 ]
