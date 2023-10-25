@@ -16,7 +16,7 @@ def __str__(self):
 def delete(self, using=None, keep_parents=False):
     self.nombre.delete(self.nombre)
     super().delete()
-
+#-----------------------------------------------------------------------------------------------------
 class roles(models.Model):
     id_rol=models.AutoField(primary_key=True)
     rol=models.CharField(max_length=20, verbose_name='Rol')
@@ -28,24 +28,38 @@ def __str__(self):
 def delete(self, using=None, keep_parents=False):
     self.rol.delete(self.rol)
     super().delete()
-
+#-----------------------------------------------------------------------------------------------------
 class Login(models.Model):
     user = models.CharField(max_length=255, verbose_name='Correo Electronico')
     password = models.CharField(max_length=255, verbose_name='password')
-
-class Producto(models.Model):
-    nombre = models.CharField(max_length=100)
-    precio = models.DecimalField(max_digits=10, decimal_places=2)
-    descripcion = models.CharField(max_length=50)
-
+#-----------------------------------------------------------------------------------------------------
+class Categoria(models.Model):
+    id_categoria = models.AutoField(primary_key=True)
+    categoria = models.CharField(max_length=100, verbose_name='Categoria')
+#-----------------------------------------------------------------------------------------------------
+class Productos(models.Model):
+    id_producto=models.AutoField(primary_key=True)
+    nombre = models.CharField(max_length=100, verbose_name='nombre')
+    descripcion = models.CharField(max_length=50, verbose_name='Descripcion')
+    precio = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Precio')
+    imagen = models.ImageField(upload_to='images/',verbose_name='imagen', null=True)
+    cantidad = models.PositiveIntegerField(verbose_name='cantidad')
+    categoria =models.ForeignKey("Categoria", verbose_name='categoria', on_delete=models.CASCADE)
+    is_available = models.BooleanField(default=True,verbose_name='aviable')
+#-----------------------------------------------------------------------------------------------------
 class Carrito(models.Model):
-    productos = models.ManyToManyField(Producto, verbose_name='ItemCarrito')
-
+    id_carrito=models.AutoField(primary_key=True)
+    producto = models.ForeignKey("Productos", verbose_name='producto', on_delete=models.CASCADE)
+#-----------------------------------------------------------------------------------------------------
 class ItemCarrito(models.Model):
-    producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
-    carrito = models.ForeignKey(Carrito, on_delete=models.CASCADE)
+    carrito = models.ForeignKey("Carrito", verbose_name='carrito', on_delete=models.CASCADE)
     cantidad = models.PositiveIntegerField()
-
+#-----------------------------------------------------------------------------------------------------
+class PedidoRealizado(models.Model):
+    id_pedido =models.AutoField(primary_key=True)
+    carrito = models.ForeignKey('Carrito',verbose_name='productos',on_delete=models.CASCADE)
+#-----------------------------------------------------------------------------------------------------
 class Venta(models.Model):
-    carrito = models.ForeignKey(Carrito, on_delete=models.CASCADE)
+    carrito = models.ForeignKey("Carrito", verbose_name='carrito', on_delete=models.CASCADE)
     fecha_venta = models.DateTimeField(auto_now_add=True)
+#-----------------------------------------------------------------------------------------------------
