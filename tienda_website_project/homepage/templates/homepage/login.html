@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <form action="/dashboard/" method="post">
+    <form action="/Dashboard/" method="post">
         <header>
             <h1>Login</h1>
             <nav>
@@ -48,8 +48,8 @@
             <!-- enlaces del negocio -->
             
             <div class="helpLinks">
-                <a href="recuperarUsuario.html">Soy nuevo cliente</a>
-                <a href="recuperarPassword.html">Olvidé mi Contraseña</a>
+                <a href="{% url 'RegistrosUsuarios' %}">Soy nuevo cliente</a>
+                <a href="{% url 'RecuperacionContrasena' %}">Olvidé mi Contraseña</a>
             </div>
         </section>
 

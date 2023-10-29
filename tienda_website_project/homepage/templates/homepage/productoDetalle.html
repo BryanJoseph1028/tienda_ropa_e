@@ -12,11 +12,11 @@
         <h1>Eleven Store</h1>
         <nav>
             <ul>
-                <li><a href="../html/index.html">Inicio</a></li>
-                <li><a href="../html/productos.html">Catálogo</a></li>
-                <li><a href="../html/ofertas.html">Ofertas</a></li>
-                <li><a href="../html/contacto.html">Contacto</a></li>
-                <li><a href="../html/login.html">Login</a></li>
+                <li><a href="{% url 'home' % }"> Inicio</a></li>
+                <li><a href="{% url 'catalogo' %}">Catálogo</a></li>
+                <li><a href="{% url 'ofertas' %}">Ofertas</a></li>
+                <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                <li><a href=" {% url 'login' %} ">Login</a></li>
             </ul>
         </nav>
     </header>

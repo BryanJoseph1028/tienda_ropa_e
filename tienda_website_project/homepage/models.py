@@ -36,7 +36,7 @@ class Login(models.Model):
 class Categoria(models.Model):
     id_categoria = models.AutoField(primary_key=True)
     categoria = models.CharField(max_length=100, verbose_name='Categoria')
-#-----------------------------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------------------
 class Productos(models.Model):
     id_producto=models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=100, verbose_name='nombre')

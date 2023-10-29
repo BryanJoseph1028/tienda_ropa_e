@@ -3,6 +3,8 @@ from django.contrib.auth.decorators import login_required
 from .models import registros_usuarios
 from .models import roles
 from .models import Carrito, Venta
+from .models import Productos
+from .models import Login
 
 # Create your views here.
 def home(request): #aqui empiezan las rutas como el index
@@ -18,7 +20,8 @@ def CarritoCompras(request, product_id):
     return render(request, 'homepage\carritoCompras.html')    
 
 def catalogo(request): 
-    return render(request, 'homepage\catalogo.html')  
+    productos = Productos.objects.all()
+    return render(request, 'homepage\catalogo.html', {'productos': productos})  
 
 @login_required
 def Compra(request): 
@@ -27,11 +30,9 @@ def Compra(request):
 def contacto(request): 
     return render(request, 'homepage\contacto.html')
 
-@login_required
 def Dashboard(request): 
     return render(request, 'homepage\dashboard.html')
 
-@login_required
 def GenerarPedido(request): 
     return render(request, 'homepage\generarPedido.html')   
 

@@ -5,46 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/dashboard.css' %}" type="text/css" >
-    <title>Dashboard de Opciones</title>
+    <title>Dashboard - usuario</title>
 </head>
 <body>
     <header>
-        <h1>Dashboard</h1>
+        <h1>Eleven Store - Dashboard</h1>
         <nav>
             <ul>
                 <li><a href="{% url 'home' % }"> Inicio</a></li>
                 <li><a href="{% url 'catalogo' %}">Catálogo</a></li>
                 <li><a href="{% url 'ofertas' %}">Ofertas</a></li>
                 <li><a href="{% url 'contacto' %}">Contacto</a></li>
-                <li><a href=" {% url 'login' %} ">Login</a></li>
+                <li><a href=" {% url 'login' %} ">Cerrar Sesion</a></li>
             </ul>
         </nav>
     </header>
     <div class="dashboard">
         <div class="option-box">
-            <a href="../html/index.html" class="option-link"><h2>Opción 1</h2></a>
+            <a href="{% url 'Roles' %}" class="option-link"><h2>Roles</h2></a>
         </div>
         <div class="option-box">
-            <a href="../html/index.html" class="option-link"><h2>Opción 1</h2></a>
+            <a href="{% url 'catalogo' %}" class="option-link"><h2>Catalogo</h2></a>
         </div>
         <div class="option-box">
-            <a href="../html/index.html" class="option-link"><h2>Opción 1</h2></a>
+            <a href="../html/index.html" class="option-link"><h2>Ver Catalogos</h2></a>
         </div>
-        <div class="option-box">
-            <a href="../html/index.html" class="option-link"><h2>Opción 1</h2></a>
-        </div>
-        <div class="option-box">
-            <a href="../html/index.html" class="option-link"><h2>Opción 1</h2></a>
-        </div>
-        <div class="option-box">
-            <a href="../html/index.html" class="option-link"><h2>Opción 1</h2></a>
-        </div>
-        <div class="option-box">
-            <a href="../html/index.html" class="option-link"><h2>Opción 1</h2></a>
-        </div>
-        <div class="option-box">
-            <a href="../html/index.html" class="option-link"><h2>Opción 1</h2></a>
-        </div>
+        
     </div>
     <footer>
         <div class="redes-sociales">
